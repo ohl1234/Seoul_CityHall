@@ -1,12 +1,8 @@
 .header{
-}
-.group-flex1,.group-flex2{
-    width: 1152px;
-    margin: 0 auto;
-}
-.group-flex1{
-    display: flex;
-    justify-content: space-between;
+    .group-flex1{
+        display: flex;
+        justify-content: space-between;
+    }
     .logo-area{}
     .sub-logo{
         a{
@@ -58,14 +54,15 @@
             }
         }
     }
-}
-.group-flex2{
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    background: #fff;
-    height: 120px;
 
+
+    .group-flex2{
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        background: #fff;
+        height: 120px;
+    }
     .logo-area{}
     .main-logo{
         a{
@@ -103,6 +100,9 @@
             }
         }
         .btn-submit{
+            position: absolute;
+            right: 0;
+            top: 0;
             &::after{
                 content: '';
                 display: inline-block;
@@ -112,9 +112,6 @@
                 @include sp-bg1;
                 background-position: -32px -97px;
             }
-            position: absolute;
-            right: 0;
-            top: 0;
         }
     }
     .weather-area{
