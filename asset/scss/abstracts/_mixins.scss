@@ -19,3 +19,13 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+@mixin sp-logo-bg {
+    background-image: url(../images/sp-logo-bg.png);
+    background-repeat: no-repeat;
+    background-size: 180px;
+}
+@mixin sp-bg1{
+    background-image: url(../images/sp-bg1.png);
+    background-repeat: no-repeat;
+    background-size: 300px;
+}

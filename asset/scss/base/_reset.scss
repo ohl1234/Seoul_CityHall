@@ -14,12 +14,12 @@ ul,ol{
     @세팅구역
 */
 body {
-    //letter-spacing: -0.025em; 
+    letter-spacing: -0.05em; 
     // -25
-    //font-family: $font-kr1;
-    //color: $color-dark1;
-    //min-width: 1248px; // 그리드 사이즈
-    font-size: 16px;
+    font-family: $font-kr1;
+    color: $color-dark1;
+    min-width: 1152px; // 그리드 사이즈
+    font-size: 14px;
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -118,4 +118,13 @@ textarea {
     &::-webkit-outer-spin-button {
         -webkit-appearance: none;
     }
+}
+
+input,select,button,fieldset{
+    font: inherit;
+    color: inherit;
+    -webkit-appearance: none;
+    border: none;
+    border-color: transparent;
+    background-color: transparent;
 }

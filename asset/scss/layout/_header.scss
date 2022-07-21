@@ -1,0 +1,128 @@
+.header{
+}
+.group-flex1,.group-flex2{
+    width: 1152px;
+    margin: 0 auto;
+}
+.group-flex1{
+    display: flex;
+    justify-content: space-between;
+    .logo-area{}
+    .sub-logo{
+        a{
+            &::after{
+                content: '';
+                display: inline-block;
+                vertical-align: top;
+                width: 105px;
+                height: 27px;
+                margin-top: 8px;
+                @include sp-bg1;
+                background-position: -5px -165px;
+            }
+        }
+    }
+    .gnb-area{
+        margin-right: auto;
+        margin-left: 62px;
+    }
+    .gnb-list{
+        display: flex;
+        
+    }
+    .gnb-item{
+        & + li{
+            margin-left: 20px;
+        }
+        a{
+            font-size: 16px;
+            height: 48px;
+            line-height: 48px;
+            font-weight: 700;
+            &:hover{
+                color: #2292e9;
+            }
+        }
+    }
+    .login-area{
+        display: flex;
+        a{
+            font-size: 14px;
+            height: 48px;
+            line-height: 48px;
+            font-weight: 700;
+            padding: 0 10px;
+            
+            &:hover{
+                color: #2292e9;
+            }
+        }
+    }
+}
+.group-flex2{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    background: #fff;
+    height: 120px;
+
+    .logo-area{}
+    .main-logo{
+        a{
+            &::after{
+                content: '';
+                display: inline-block;
+                vertical-align: top;
+                width: 178px;
+                height: 51px;
+                margin: 38px 0 30px;
+                @include sp-logo-bg;
+                background-position: 0 0;
+            }
+        }
+    }
+    .search-area{
+        padding-top: 40px;
+        .search-wrap{
+            position: relative;
+            width: 460px;
+            height: 42px;
+            margin-left: 67px;
+            border: 3px solid #2292e9;
+            box-sizing: border-box;
+        }
+        .input-text{
+            float: left;
+            width: calc(100% - 42px);
+            border: 0;
+            padding: 0 10px;
+            height: 38px;
+            line-height: 38px;
+            &::placeholder{
+                color: #2292e9;
+            }
+        }
+        .btn-submit{
+            &::after{
+                content: '';
+                display: inline-block;
+                vertical-align: top;
+                width: 36px;
+                height: 36px;
+                @include sp-bg1;
+                background-position: -32px -97px;
+            }
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+    }
+    .weather-area{
+        
+    }
+    .language-area{
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+}
