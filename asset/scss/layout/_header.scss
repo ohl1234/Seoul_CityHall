@@ -4,7 +4,7 @@
         justify-content: space-between;
     }
     .logo-area{}
-    .sub-logo{
+    .logo1{
         a{
             &::after{
                 content: '';
@@ -64,7 +64,7 @@
         height: 120px;
     }
     .logo-area{}
-    .main-logo{
+    .logo2{
         a{
             &::after{
                 content: '';
@@ -79,12 +79,14 @@
         }
     }
     .search-area{
-        padding-top: 40px;
+        position: absolute;
+        top:40px;   
+        left: 50%;
+        margin-left: -245px;
         .search-wrap{
             position: relative;
             width: 460px;
             height: 42px;
-            margin-left: 37px;
             border: 3px solid #2292e9;
             box-sizing: border-box;
         }

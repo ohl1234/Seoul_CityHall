@@ -205,7 +205,7 @@ input, select, button, fieldset {
   display: flex;
   justify-content: space-between;
 }
-.header .sub-logo a::after {
+.header .logo1 a::after {
   content: "";
   display: inline-block;
   vertical-align: top;
@@ -256,7 +256,7 @@ input, select, button, fieldset {
   background: #fff;
   height: 120px;
 }
-.header .main-logo a::after {
+.header .logo2 a::after {
   content: "";
   display: inline-block;
   vertical-align: top;
@@ -269,13 +269,15 @@ input, select, button, fieldset {
   background-position: 0 0;
 }
 .header .search-area {
-  padding-top: 40px;
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  margin-left: -245px;
 }
 .header .search-area .search-wrap {
   position: relative;
   width: 460px;
   height: 42px;
-  margin-left: 37px;
   border: 3px solid #2292e9;
   box-sizing: border-box;
 }
