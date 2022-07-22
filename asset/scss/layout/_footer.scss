@@ -19,6 +19,11 @@
                 vertical-align: -4px;
                 background: #dcdcdc;
             }
+            &:last-child{
+                &::after{
+                    display: none;
+                }
+            }
         }
         strong{
             font-weight: 700;
