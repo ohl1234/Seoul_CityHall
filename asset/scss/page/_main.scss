@@ -125,7 +125,7 @@
                 background: rgba(255,255,255,.5);
             }
         }
-        .play{
+        .auto-play{
         }
         .btn{
             display: flex;
@@ -149,7 +149,7 @@
                 
             }
         }
-        .start{
+        .play{
             display: none;
             margin-top: 8px;
             &::after{
@@ -159,9 +159,14 @@
                 display: inline-block;
             }
         }
-        .stop{
+        .pause{
+            display: none;
+            margin-top: 8px;
             &::after{
                 background-position: -285px -285px;
+            }
+            &.active{
+                display: inline-block;
             }
         }
     }

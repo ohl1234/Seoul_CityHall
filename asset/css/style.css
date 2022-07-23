@@ -491,6 +491,11 @@ input, select, button, fieldset {
   margin-left: 10px;
 }
 
+.sc-title {
+  font-size: 24px;
+  font-weight: 700;
+}
+
 .sc-visual {
   display: flex;
   justify-content: space-between;
@@ -641,18 +646,25 @@ input, select, button, fieldset {
 .sc-visual .slide-control .next::after {
   background-position: -257px -285px;
 }
-.sc-visual .slide-control .start {
+.sc-visual .slide-control .play {
   display: none;
   margin-top: 8px;
 }
-.sc-visual .slide-control .start::after {
+.sc-visual .slide-control .play::after {
   background-position: -269px -285px;
 }
-.sc-visual .slide-control .start.active {
+.sc-visual .slide-control .play.active {
   display: inline-block;
 }
-.sc-visual .slide-control .stop::after {
+.sc-visual .slide-control .pause {
+  display: none;
+  margin-top: 8px;
+}
+.sc-visual .slide-control .pause::after {
   background-position: -285px -285px;
+}
+.sc-visual .slide-control .pause.active {
+  display: inline-block;
 }
 .sc-visual .group-right {
   width: 360px;
