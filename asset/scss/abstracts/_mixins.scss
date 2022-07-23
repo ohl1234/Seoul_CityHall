@@ -29,6 +29,11 @@
     background-repeat: no-repeat;
     background-size: 300px;
 }
+@mixin sp-bg2{
+    background-image: url(../images/sp-bg2.png);
+    background-repeat: no-repeat;
+    background-size: 1200px;
+}
 @mixin sp-bg3{
     background-image: url(../images/sp-bg3.png);
     background-repeat: no-repeat;
