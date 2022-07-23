@@ -1,4 +1,5 @@
 $(function(){
+  // swiper slide
     var swiper = new Swiper(".main-slide", {
         spaceBetween: 0,
         centeredSlides: true,
@@ -7,12 +8,22 @@ $(function(){
           disableOnInteraction: false,
         },
         pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
+          el: ".pager",
+          type: "fraction",
         },
         navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
+          nextEl: ".next",
+          prevEl: ".prev",
         },
       });
+
+    //tab
+    $('.btn-tab').click(function(e){
+      e.preventDefult;
+
+      href = $(this).data('target')
+      $('[data-id='+href+']').addClass('active').siblings('.swiper').removeClass('active')
+      $(this).addClass('active').siblings().removeClass('active')
+    })
+    
 })

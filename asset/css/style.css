@@ -557,6 +557,8 @@ input, select, button, fieldset {
   position: absolute;
   top: 0;
   left: 0;
+}
+.sc-visual .swiper.active {
   display: block;
 }
 .sc-visual .swiper-wrapper {
@@ -594,6 +596,7 @@ input, select, button, fieldset {
 .sc-visual .slide-control {
   position: absolute;
   display: flex;
+  align-items: center;
   right: 3px;
   bottom: 4px;
   width: 110px;
@@ -615,13 +618,17 @@ input, select, button, fieldset {
   display: inline-block;
   width: 1px;
   height: 24px;
-  margin: 4px 12px;
+  margin: 4px 10px;
   background: rgba(255, 255, 255, 0.5);
+}
+.sc-visual .slide-control .btn {
+  display: flex;
+  align-items: center;
 }
 .sc-visual .slide-control .btn::after {
   content: "";
   display: inline-block;
-  vertical-align: top;
+  vertical-align: center;
   width: 18px;
   height: 18px;
   z-index: 10;
@@ -629,8 +636,23 @@ input, select, button, fieldset {
   background-image: url(../images/sp-bg1.png);
   background-repeat: no-repeat;
   background-size: 300px;
-  background-position: -241px -285px;
-  background-color: #ff0;
+  background-position: -242px -285px;
+}
+.sc-visual .slide-control .next::after {
+  background-position: -257px -285px;
+}
+.sc-visual .slide-control .start {
+  display: none;
+  margin-top: 8px;
+}
+.sc-visual .slide-control .start::after {
+  background-position: -269px -285px;
+}
+.sc-visual .slide-control .start.active {
+  display: inline-block;
+}
+.sc-visual .slide-control .stop::after {
+  background-position: -285px -285px;
 }
 .sc-visual .group-right {
   width: 360px;
@@ -645,6 +667,62 @@ input, select, button, fieldset {
   background-image: url(../images/corona-bg.jpg);
   background-repeat: no-repeat;
   background-position: 0 0;
+}
+.sc-visual .notice-area .notice-wrap {
+  position: relative;
+  display: flex;
+  height: 100%;
+}
+.sc-visual .notice-area .notice-box {
+  position: absolute;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 26px;
+  line-height: 26px;
+  color: #fff;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: -0.075em;
+}
+.sc-visual .notice-area .notice-box:nth-of-type(1) {
+  right: 20px;
+  top: 12px;
+  left: initial;
+  height: 16px;
+  margin-left: 25px;
+  line-height: 16px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #000;
+  letter-spacing: -0.05em;
+}
+.sc-visual .notice-area .notice-box:nth-of-type(2) {
+  top: 32px;
+  width: 105px;
+  height: 58px;
+  margin-left: -160px;
+}
+.sc-visual .notice-area .notice-box:nth-of-type(3) {
+  top: 32px;
+  width: 105px;
+  height: 58px;
+  margin-left: -55px;
+}
+.sc-visual .notice-area .notice-box:nth-of-type(4) {
+  top: 32px;
+  width: 110px;
+  height: 58px;
+  margin-left: 50px;
+}
+.sc-visual .notice-area .title {
+  font-size: 13px;
+}
+.sc-visual .notice-area .text {
+  font-size: 17px;
+  margin-top: 2px;
 }
 .sc-visual .mayor-area {
   position: relative;
