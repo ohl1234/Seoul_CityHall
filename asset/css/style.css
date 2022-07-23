@@ -817,7 +817,6 @@ input, select, button, fieldset {
 }
 .sc-service .link-asite {
   position: absolute;
-  position: absolute;
   right: 0;
   top: 50px;
   display: block;
@@ -927,4 +926,59 @@ input, select, button, fieldset {
   white-space: nowrap;
   font-size: 15px;
   color: #333;
+}
+
+.sc-info {
+  padding-top: 40px;
+}
+.sc-info .sc-title {
+  padding-bottom: 20px;
+}
+.sc-info .info-list {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 27px;
+}
+.sc-info .info-item {
+  width: 85px;
+  height: 145px;
+  text-align: center;
+}
+.sc-info .info-item a {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 16px;
+}
+.sc-info .info-item a::before {
+  content: "";
+  display: inline-block;
+  vertical-align: top;
+  width: 85px;
+  height: 85px;
+  margin: 0 auto 12px;
+  background-image: url(../images/ic-house.png);
+  background-repeat: no-repeat;
+}
+.sc-info .info-item:nth-child(2) a::before {
+  background-image: url(../images/ic-economy.png);
+}
+.sc-info .info-item:nth-child(3) a::before {
+  background-image: url(../images/ic-traffic.png);
+}
+.sc-info .info-item:nth-child(4) a::before {
+  background-image: url(../images/ic-environment.png);
+}
+.sc-info .info-item:nth-child(5) a::before {
+  background-image: url(../images/ic-welfare.png);
+}
+.sc-info .info-item:nth-child(6) a::before {
+  background-image: url(../images/ic-safty.png);
+}
+.sc-info .info-item:nth-child(7) a::before {
+  background-image: url(../images/ic-culture.png);
+}
+.sc-info .info-item:nth-child(8) a::before {
+  background-image: url(../images/ic-work.png);
 }

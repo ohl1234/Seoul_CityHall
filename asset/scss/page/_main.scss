@@ -365,7 +365,6 @@
     }
     .link-asite{
         position: absolute;
-        position: absolute;
         right: 0;
         top: 50px;
         display: block;
@@ -481,4 +480,87 @@
             color: #333;
         }
     }
+}
+.sc-info{
+    padding-top: 40px;
+    .sc-title{
+        padding-bottom: 20px;
+    }
+    .info-list{
+        display: flex;
+        justify-content: space-between;
+        padding: 0 27px;
+    }
+    .info-item{
+        width: 85px;
+        height: 145px;
+        text-align: center;
+        a{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            font-size: 16px;
+            &::before{
+                content: '';
+                display: inline-block;
+                vertical-align: top;
+                width: 85px;
+                height: 85px;
+                margin: 0 auto 12px;
+                background-image: url(../images/ic-house.png);
+                background-repeat: no-repeat;
+            }
+        }
+        &:nth-child(2){
+            a{
+                &::before{
+                    background-image: url(../images/ic-economy.png);
+                }
+            }
+        }
+        &:nth-child(3){
+            a{
+                &::before{
+                    background-image: url(../images/ic-traffic.png);
+                }
+            }
+        }
+        &:nth-child(4){
+            a{
+                &::before{
+                    background-image: url(../images/ic-environment.png);
+                }
+            }
+        }
+        &:nth-child(5){
+            a{
+                &::before{
+                    background-image: url(../images/ic-welfare.png);
+                }
+            }
+        }
+        &:nth-child(6){
+            a{
+                &::before{
+                    background-image: url(../images/ic-safty.png);
+                }
+            }
+        }
+        &:nth-child(7){
+            a{
+                &::before{
+                    background-image: url(../images/ic-culture.png);
+                }
+            }
+        }
+        &:nth-child(8){
+            a{
+                &::before{  
+                    background-image: url(../images/ic-work.png);
+                }
+            }
+        }
+    }
+
 }
