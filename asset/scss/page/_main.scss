@@ -388,12 +388,97 @@
     .corona-item{
         padding: 20px 0;
         a{
+            position: relative;
             display: block;
         }
         & + li{
             a{
-                border-left:1px solid #dbdbdb;
+                &::before{
+                    content: '';
+                    position: absolute;
+                    top: 5px;
+                    left: 0px;
+                    width: 1px;
+                    height: 60px;
+                    background: #dbdbdb;
+                }
             }
+        }
+    }
+}
+.line{
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 0 50px;
+    border-bottom: 2px solid #222222;
+    & > section{
+        width: calc((100% - 72px) / 3);
+    }
+}
+.sc-board{
+    .sc-title{
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #dbdbdb;
+    }
+    .board-list{
+    }
+    .board-item{
+        padding: 6px 0 6px 0;
+        width: 100%;
+        @include ellip;
+    }
+    .category{
+        margin-right: 9px;
+        &.culture{
+            color: $color-culture;
+        }
+        &.work{
+            color: $color-work;
+        }
+        &.house{
+            color: $color-house;
+        }
+        &.wel{
+            color: $color-wel;
+        }
+        &.envi{
+            color: $color-envi;
+        }
+    }
+    .text{}
+}
+.sc-best{
+    .sc-title{
+        padding-bottom: 10px;
+    }
+    .best-list{
+        display: flex;
+        flex-wrap: wrap;
+        padding: 17px 5px 7px 20px;
+        background: #eff4f8;
+    }
+    .best-item{
+        width: 50%;
+        position: relative;
+        padding: 0 0 10px 10px;
+        &::before{
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            height: 2px;
+            width: 2px;
+            margin-top: -6px;
+            background: #666666;
+        }
+
+        a{
+            display: block;
+            width: 94%;
+            @include ellip;
+            font-size: 15px;
+            color: #333;
         }
     }
 }

@@ -842,8 +842,89 @@ input, select, button, fieldset {
   padding: 20px 0;
 }
 .sc-corona .corona-item a {
+  position: relative;
   display: block;
 }
-.sc-corona .corona-item + li a {
-  border-left: 1px solid #dbdbdb;
+.sc-corona .corona-item + li a::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 0px;
+  width: 1px;
+  height: 60px;
+  background: #dbdbdb;
+}
+
+.line {
+  display: flex;
+  justify-content: space-between;
+  padding: 50px 0 50px;
+  border-bottom: 2px solid #222222;
+}
+.line > section {
+  width: calc((100% - 72px) / 3);
+}
+
+.sc-board .sc-title {
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #dbdbdb;
+}
+.sc-board .board-item {
+  padding: 6px 0 6px 0;
+  width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.sc-board .category {
+  margin-right: 9px;
+}
+.sc-board .category.culture {
+  color: #9b64d3;
+}
+.sc-board .category.work {
+  color: #028ab6;
+}
+.sc-board .category.house {
+  color: #c35c3c;
+}
+.sc-board .category.wel {
+  color: #d76000;
+}
+.sc-board .category.envi {
+  color: #599100;
+}
+.sc-best .sc-title {
+  padding-bottom: 10px;
+}
+.sc-best .best-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 17px 5px 7px 20px;
+  background: #eff4f8;
+}
+.sc-best .best-item {
+  width: 50%;
+  position: relative;
+  padding: 0 0 10px 10px;
+}
+.sc-best .best-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  height: 2px;
+  width: 2px;
+  margin-top: -6px;
+  background: #666666;
+}
+.sc-best .best-item a {
+  display: block;
+  width: 94%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 15px;
+  color: #333;
 }
