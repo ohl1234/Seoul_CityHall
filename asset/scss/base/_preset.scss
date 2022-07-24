@@ -11,3 +11,17 @@
     margin: 0 auto;
 }
 
+.hover{
+    display: block;
+    overflow: hidden;
+    img{
+        width: 100%;
+        object-fit: cover;
+        transition: transform 0.3s;
+    }
+    &:hover{
+        img{
+            transform: scale(1.1);
+        }
+    }
+}
