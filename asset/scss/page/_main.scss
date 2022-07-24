@@ -415,6 +415,7 @@
     }
 }
 .sc-board{
+    position: relative;
     .sc-title{
         margin-bottom: 10px;
         padding-bottom: 10px;
@@ -445,7 +446,16 @@
             color: $color-envi;
         }
     }
-    .text{}
+    .btn-more{
+        position: absolute;
+        right: 0;
+        top: 6px;
+        width: 22px;
+        height: 20px;
+        border: 1px solid #ddd;
+        @include sp-bg1;
+        background-position: -1px -1px;
+    }    
 }
 .sc-best{
     .sc-title{

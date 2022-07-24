@@ -864,6 +864,9 @@ input, select, button, fieldset {
   width: calc((100% - 72px) / 3);
 }
 
+.sc-board {
+  position: relative;
+}
 .sc-board .sc-title {
   margin-bottom: 10px;
   padding-bottom: 10px;
@@ -894,6 +897,19 @@ input, select, button, fieldset {
 .sc-board .category.envi {
   color: #599100;
 }
+.sc-board .btn-more {
+  position: absolute;
+  right: 0;
+  top: 6px;
+  width: 22px;
+  height: 20px;
+  border: 1px solid #ddd;
+  background-image: url(../images/sp-bg1.png);
+  background-repeat: no-repeat;
+  background-size: 300px;
+  background-position: -1px -1px;
+}
+
 .sc-best .sc-title {
   padding-bottom: 10px;
 }
