@@ -2,19 +2,18 @@
     .group-flex1{
         display: flex;
         justify-content: space-between;
-    }
-    .logo-area{}
-    .logo1{
-        a{
-            &::after{
-                content: '';
-                display: inline-block;
-                vertical-align: top;
-                width: 105px;
-                height: 27px;
-                margin-top: 8px;
-                @include sp-bg1;
-                background-position: -5px -165px;
+        .logo{
+            a{
+                &::after{
+                    content: '';
+                    display: inline-block;
+                    vertical-align: top;
+                    width: 105px;
+                    height: 27px;
+                    margin-top: 8px;
+                    @include sp-bg1;
+                    background-position: -5px -165px;
+                }
             }
         }
     }
@@ -62,19 +61,18 @@
         justify-content: space-between;
         background: #fff;
         height: 120px;
-    }
-    .logo-area{}
-    .logo2{
-        a{
-            &::after{
-                content: '';
-                display: inline-block;
-                vertical-align: top;
-                width: 178px;
-                height: 51px;
-                margin: 38px 0 30px;
-                @include sp-logo-bg;
-                background-position: 0 0;
+        .logo{
+            a{
+                &::after{
+                    content: '';
+                    display: inline-block;
+                    vertical-align: top;
+                    width: 178px;
+                    height: 51px;
+                    margin: 38px 0 30px;
+                    @include sp-logo-bg;
+                    background-position: 0 0;
+                }
             }
         }
     }
@@ -99,6 +97,22 @@
             line-height: 38px;
             &::placeholder{
                 color: #2292e9;
+            }
+        }
+        .btn-keyboard{
+            position: absolute;
+            top: 0;
+            right: 42px;
+            cursor: pointer;
+            &::after{
+                content: '';
+                display: inline-block;
+                vertical-align: top;
+                width: 36px;
+                height: 36px;
+                background-image: url(../images/keyboard.png);
+                background-repeat: no-repeat;
+                background-position:center;
             }
         }
         .btn-submit{
@@ -135,7 +149,6 @@
                 display: block;
             }
         }
-        .info1{}
         .degree{
             font-size: 25px;
             margin-right: 5px;
