@@ -426,6 +426,27 @@ input, select, button, fieldset {
   background-color: #1E6CB3;
 }
 
+.footer {
+  position: relative;
+}
+.footer .btn-top {
+  position: fixed;
+  bottom: -100px;
+  bottom: 98px;
+  left: 50%;
+  display: block;
+  margin-left: 600px;
+  z-index: 1000000;
+}
+.footer .btn-top::after {
+  content: "";
+  display: inline-block;
+  vertical-align: top;
+  width: 34px;
+  height: 34px;
+  background-image: url(../images/top.png);
+  background-repeat: no-repeat;
+}
 .footer .group-flex6 {
   display: flex;
   justify-content: space-between;

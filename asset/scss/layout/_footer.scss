@@ -1,4 +1,25 @@
 .footer{
+    position: relative;
+    .btn-top{
+        position: fixed;
+        bottom: -100px;
+        bottom: 98px;
+        left: 50%;
+        display: block;
+        margin-left: 600px;
+        // opacity: 0;
+        // transition: 1s;
+        z-index: 1000000;
+        &::after{
+            content: '';
+            display: inline-block;
+            vertical-align: top;
+            width: 34px;
+            height: 34px;
+            background-image: url(../images/top.png);
+            background-repeat: no-repeat;
+        }
+    }
     .group-flex6{
         display: flex;
         justify-content: space-between;
