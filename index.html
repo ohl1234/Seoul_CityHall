@@ -46,7 +46,7 @@
                 </h2>
             </div>
             <div class="search-area">
-                <form action="#" method="get">
+                <form action="#" method="get" role="search">
                     <fieldset>
                         <legend class="blind">검색영역</legend>
                         <div class="search-wrap">
@@ -122,12 +122,12 @@
                                 <div class="slide-control">
                                         <div class="fraction">
                                         </div>
-                                        <a href="#" class="btn prev"><span class="blind">이전</span></a>
+                                        <a href="#" class="btn prev" role="button"><span class="blind">이전</span></a>
                                         <div class="auto-play">
-                                            <a href="#" class="btn play"><span class="blind">재생할것</span></a>
-                                            <a href="#" class="btn pause active"><span class="blind">정지할것</span></a>
+                                            <a href="#" class="btn play" role="button"><span class="blind">재생할것</span></a>
+                                            <a href="#" class="btn pause active" role="button"><span class="blind">정지할것</span></a>
                                         </div>
-                                        <a href="#" class="btn next"><span class="blind">다음</span></a>
+                                        <a href="#" class="btn next" role="button"><span class="blind">다음</span></a>
                                 </div>
                             </div>
                         </div>
@@ -180,12 +180,12 @@
                                 </div>
                                 <div class="slide-control">
                                     <div class="fraction"></div>
-                                    <a href="#" class="btn prev"><span class="blind">이전</span></a>
+                                    <a href="#" class="btn prev" role="button"><span class="blind">이전</span></a>
                                     <div class="auto-play">
-                                        <a href="#" class="btn play"><span class="blind">재생할것</span></a>
-                                        <a href="#" class="btn pause active"><span class="blind">정지할것</span></a>
+                                        <a href="#" class="btn play" role="button"><span class="blind">재생할것</span></a>
+                                        <a href="#" class="btn pause active" role="button"><span class="blind">정지할것</span></a>
                                     </div>
-                                    <a href="#" class="btn next"><span class="blind">다음</span></a>
+                                    <a href="#" class="btn next" role="button"><span class="blind">다음</span></a>
                                 </div>
                             </div>
                         </div>
@@ -211,7 +211,7 @@
                             </div>
                         </a>
                     </section>
-                    <div class="vision-area">
+                    <div class="vision-area" role="banner">
                         <a href="#">
                             <img src="./asset/images/seoulvision.jpg" alt="서울비전2030">
                         </a>
@@ -222,37 +222,35 @@
                             <img src="./asset/images/mayor.jpg" alt="동행·매력 특별시 서울 서울특별시장 오세훈입니다.">
                         </a>
                         <div class="link-box">
-                            <a href="#" class="link-btn1">
+                            <a href="#" class="link-btn1" role="button">
                                 <img src="./asset/images/mayor-btn1.png" alt="시장에게 바란다">
                             </a>
-                            <a href="#" class="link-btn2">
+                            <a href="#" class="link-btn2" role="button">
                                 <img src="./asset/images/mayor-btn2.png" alt="공약(매니페스토)">
                             </a>
                         </div>
                     </section>
                 </div>
             </div>
-
-
             <section class="sc-service">
                 <h2 class="sc-title">주요 서비스</h2>
-                <ul class="service-list">
-                    <li class="service-item reserve"><a href="#">공공서비스예약</a></li>
-                    <li class="service-item complaint"><a href="#">응답소(민원신고)</a></li>
-                    <li class="service-item job"><a href="#">서울일자리</a></li>
-                    <li class="service-item estate"><a href="#">부동산정보</a></li>
-                    <li class="service-item learn"><a href="#">평생학습포털</a></li>
-                    <li class="service-item welfare"><a href="#">서울복지포털</a></li>
-                    <li class="service-item residence"><a href="#">서울주거포털</a></li>
-                    <li class="service-item youth"><a href="#">청년몽땅정보통</a></li>
-                    <li class="service-item hand"><a href="#">내 손안에 서울</a></li>
-                    <li class="service-item democracy"><a href="#">민주주의 서울</a></li>
-                    <li class="service-item council"><a href="#">시의회</a></li>
+                <ul class="service-list" role="tablist">
+                    <li class="service-item reserve" role="presentation"><a href="#" role="tab">공공서비스예약</a></li>
+                    <li class="service-item complaint" role="presentation"><a href="#" role="tab">응답소(민원신고)</a></li>
+                    <li class="service-item job" role="presentation"><a href="#" role="tab">서울일자리</a></li>
+                    <li class="service-item estate" role="presentation"><a href="#" role="tab">부동산정보</a></li>
+                    <li class="service-item learn" role="presentation"><a href="#" role="tab">평생학습포털</a></li>
+                    <li class="service-item welfare" role="presentation"><a href="#" role="tab">서울복지포털</a></li>
+                    <li class="service-item residence" role="presentation"><a href="#" role="tab">서울주거포털</a></li>
+                    <li class="service-item youth" role="presentation"><a href="#" role="tab">청년몽땅정보통</a></li>
+                    <li class="service-item hand" role="presentation"><a href="#" role="tab">내 손안에 서울</a></li>
+                    <li class="service-item democracy" role="presentation"><a href="#" role="tab">민주주의 서울</a></li>
+                    <li class="service-item council" role="presentation"><a href="#" role="tab">시의회</a></li>
                 </ul>
-                <a href="#" class="link-asite">전체누리집</a>
+                <a href="#" class="link-asite" role="button">전체누리집</a>
             </section>
         </div>
-        <section class="sc-corona">
+        <section class="sc-corona"  role="banner">
             <h2 class="blind">코로나 센터 문의</h2>
             <div class="inner-wrap">
                 <ul class="corona-list">
@@ -316,7 +314,7 @@
                             </a>
                         </li>
                     </ul>
-                    <a href="#" class="btn-more"><span class="blind">더보기</span></a>
+                    <a href="#" class="btn-more" role="button"><span class="blind">더보기</span></a>
                 </section>
                 <section class="sc-board">
                     <h2 class="sc-title">이달의 행사 및 축제</h2>
@@ -352,7 +350,7 @@
                             </a>
                         </li>
                     </ul>
-                    <a href="#" class="btn-more"><span class="blind">더보기</span></a>
+                    <a href="#" class="btn-more" role="button"><span class="blind">더보기</span></a>
                 </section>
                 <section class="sc-best">
                     <h2 class="sc-title">자주 찾은 서비스</h2>
@@ -372,22 +370,21 @@
             </div>
             <section class="sc-info">
                 <h2 class="sc-title">분야별 정보</h2>
-                <ul class="info-list">
-                    <li class="info-item house"><a href="#">주택</a></li>
-                    <li class="info-item economy"><a href="#">경제</a></li>
-                    <li class="info-item traffic"><a href="#">교통</a></li>
-                    <li class="info-item envi"><a href="#">환경</a></li>
-                    <li class="info-item welfare"><a href="#">복지</a></li>
-                    <li class="info-item safty"><a href="#">안전</a></li>
-                    <li class="info-item culture"><a href="#">문화</a></li>
-                    <li class="info-item work"><a href="#">행정</a></li>
+                <ul class="info-list" role="tablist">
+                    <li class="info-item house" role="presentation"><a href="#" role="tab">주택</a></li>
+                    <li class="info-item economy" role="presentation"><a href="#" role="tab">경제</a></li>
+                    <li class="info-item traffic" role="presentation"><a href="#" role="tab">교통</a></li>
+                    <li class="info-item envi" role="presentation"><a href="#" role="tab">환경</a></li>
+                    <li class="info-item welfare" role="presentation"><a href="#" role="tab">복지</a></li>
+                    <li class="info-item safty" role="presentation"><a href="#" role="tab">안전</a></li>
+                    <li class="info-item culture" role="presentation"><a href="#" role="tab">문화</a></li>
+                    <li class="info-item work" role="presentation"><a href="#" role="tab">행정</a></li>
                 </ul>
             </section>
             <div class="sc-news">
                 <h2 class="sc-title">새소식</h2>
                 <ul class="news-list">
                     <li class="news-item">
-                        <!-- @이렇게 수정~! -->
                         <a href="#">
                             <div class="thumb-box">
                                 <em class="category wel">복지</em>
@@ -456,7 +453,7 @@
                         </a>
                     </li>
                 </ul>
-                <a href="#" class="link-more">전체보기</a>
+                <a href="#" class="link-more" role="button">전체보기</a>
             </div>
 
             <div class="group-flex5">
@@ -571,12 +568,12 @@
                             <div class="slide-control">
                                 <div class="slide-control-wrap">
                                     <div class="fraction"></div>
-                                    <a href="#" class="btn prev"><span class="blind">이전</span></a>
+                                    <a href="#" class="btn prev" role="button"><span class="blind">이전</span></a>
                                     <div class="auto-play">
-                                        <a href="#" class="btn play active"><span class="blind">재생</span></a>
-                                        <a href="#" class="btn pause"><span class="blind">정지</span></a>
+                                        <a href="#" class="btn play active" role="button"><span class="blind">재생</span></a>
+                                        <a href="#" class="btn pause" role="button"><span class="blind">정지</span></a>
                                     </div>
-                                    <a href="#" class="btn next"><span class="blind">다음</span></a>
+                                    <a href="#" class="btn next" role="button"><span class="blind">다음</span></a>
                                 </div>
                             </div>
                         </div>
@@ -727,10 +724,10 @@
                 <span>© Seoul Metropolitan Government all rights reserved</span>
             </address>
             <div class="mark-area">
-                <a href="#" class="link-ismsp">
+                <a href="#" class="link-ismsp" role="button">
                     <img src="./asset/images/footer-mark-ismsp.png" alt="정보보호 및 개인정보보호 관리체계(ISMS-P) 인증마크">
                 </a>
-                <a href="#" class="link-wah">
+                <a href="#" class="link-wah" role="button">
                     <img src="./asset/images/footer-mark-wah.png" alt="서울시 웹접근성 품질인증">
                 </a>
             </div>
