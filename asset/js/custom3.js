@@ -57,4 +57,108 @@ $(function(){
             }
         });
     });
+
+    const slide1 = new Swiper(".slide1 .swiper", {
+        loop:true,
+        autoplay: {
+          delay: 2000,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".fraction",
+          type: "fraction",
+        },
+        navigation: {
+          nextEl: ".next",
+          prevEl: ".prev",
+        },
+    });
+   const slide2 = new Swiper(".slide2 .swiper", {
+        loop:true,
+        autoplay: {
+          delay: 2000,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".fraction",
+          type: "fraction",
+        },
+        navigation: {
+          nextEl: ".next",
+          prevEl: ".prev",
+        },
+    });
+    slide2.autoplay.stop(); // 처음엔 slide2 재생 멈춤 상태로 선언
+    const slide3 = new Swiper(".slide3 .swiper", {
+        slidesPerView: 3,
+        spaceBetween: 43,
+        loop:true,
+        autoplay: {
+          delay: 2000,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".fraction",
+          type: "fraction",
+        },
+        navigation: {
+          nextEl: ".next",
+          prevEl: ".prev",
+        },
+    });
+
+    $('.slide .sc-title-tab').click(function(e){
+        e.preventDefault();
+        $('.sc-title-tab').removeClass('active');
+        $(this).parent().addClass('active').siblings().removeClass('active');
+        // 해당하는 tab의 부모인 slide가 display block 형제 요소 display none
+        
+        if($(this).parent().hasClass('slide1')){
+            slide2.autoplay.stop();
+            if ($('.slide1 .play').hasClass('active')) {
+                slide1.autoplay.stop();
+            } else {
+                slide1.autoplay.start();
+            }            
+        }else{
+            slide1.autoplay.stop();
+            if ($('.slide2 .play').hasClass('active')) {
+                slide2.autoplay.stop();
+            } else {
+                slide2.autoplay.start();
+            }
+        }// class이벤트엔 .찍지 않기
+    });
+
+    $('.slide1 .auto-play').click(function(e){
+        e.preventDefault();
+        if($(this).find('.play').hasClass('active')){
+            slide1.autoplay.start();
+            $(this).find('.play').removeClass('active').siblings().addClass('active');
+        }else{
+            slide1.autoplay.stop();
+            $(this).find('.pause').removeClass('active').siblings().addClass('active');
+        }
+    });
+    $('.slide2 .auto-play').click(function(e){
+        e.preventDefault();
+        if($(this).find('.play').hasClass('active')){
+            slide2.autoplay.start();
+            $(this).find('.play').removeClass('active').siblings().addClass('active');
+        }else{
+            slide2.autoplay.stop();
+            $(this).find('.pause').removeClass('active').siblings().addClass('active');
+        }
+    });
+    $('.slide3 .auto-play').click(function(e){
+        e.preventDefault();
+        if($(this).find('.play').hasClass('active')){
+            slide3.autoplay.start();
+            $(this).find('.play').removeClass('active').siblings().addClass('active');
+        }else{
+            slide3.autoplay.stop();
+            $(this).find('.pause').removeClass('active').siblings().addClass('active');
+        }
+    });
+
 })
