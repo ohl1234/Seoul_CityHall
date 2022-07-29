@@ -432,10 +432,11 @@ input, select, button, fieldset {
 .footer .btn-top {
   position: fixed;
   bottom: -100px;
-  bottom: 98px;
   left: 50%;
   display: block;
   margin-left: 600px;
+  opacity: 0;
+  transition: 1s;
   z-index: 1000000;
 }
 .footer .btn-top::after {
@@ -446,6 +447,10 @@ input, select, button, fieldset {
   height: 34px;
   background-image: url(../images/top.png);
   background-repeat: no-repeat;
+}
+.footer .btn-top.active {
+  bottom: 98px;
+  opacity: 1;
 }
 .footer .group-flex6 {
   display: flex;
@@ -1352,14 +1357,14 @@ input, select, button, fieldset {
 }
 .sc-popup .btn.play {
   display: none;
-  background-position: -65px -43px;
+  background-position: -101px -43px;
 }
 .sc-popup .btn.play.active {
   display: block;
 }
 .sc-popup .btn.pause {
   display: none;
-  background-position: -101px -43px;
+  background-position: -65px -43px;
 }
 .sc-popup .btn.pause.active {
   display: block;

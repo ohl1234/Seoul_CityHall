@@ -834,14 +834,14 @@
         }
         &.play{
             display: none;
-            background-position: -65px -43px;
+            background-position: -101px -43px;
             &.active{
                 display: block;
             }
         }
         &.pause{
             display: none;
-            background-position: -101px -43px;
+            background-position: -65px -43px;
             &.active{
                 display: block;
             }
