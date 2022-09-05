@@ -14,7 +14,7 @@
 
 #u_skip {
     position: relative;
-    z-index: 3000
+    z-index: 3000;
 }
 
 #u_skip a {
@@ -24,14 +24,14 @@
     width: 138px;
     border: 1px solid #4ec53d;
     background: #333;
-    text-align: center
+    text-align: center;
 }
 
 #u_skip a:active,
 #u_skip a:focus {
     top: 0;
     text-decoration: none;
-    z-index: 1000
+    z-index: 1000;
 }
 
 #u_skip span {
@@ -41,5 +41,5 @@
     line-height: 26px;
     color: #fff;
     letter-spacing: -1px;
-    white-space: nowrap
+    white-space: nowrap;
 }
