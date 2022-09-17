@@ -1,21 +1,62 @@
+    // 1. 셀렉트 창 선택 후  go버튼 눌렀을때 새창 띄어서 이동
+    // 2. top 버튼 스크롤 이벤트
+    // 3. 패밀리사이트 slidedown slideup 탭메뉴 
+    // 4. kepdown 이벤트
+    // 5. 메인 슬라이드 swiper슬라이드 - 탭메뉴, 오토플레이 컨트롤
+    // 6. 서브 슬라이드 swiper슬라이드 - 오토플레이 컨트롤
 $(function(){
-  // window.open
-  // click
-  // val
+    $('#langBtn').click(function(){
+        Url = $('#lang').val();
+        window.open(Url);
+    });
 
-  /**
- * 접근성 & UX 개선 (키보드 사용할때만 포커스 나오게)
- *
- * @version 1.0.0
- * @since 2022-01-16
- * @author 본인이름 (Nico)
- */
+    let lastScroll = 0;
+    $(window).scroll(function(){
+        current = $(this).scrollTop();
+        if(current > lastScroll){
+            $('.btn-top').addClass('active');
+        }else{
+            $('.btn-top').removeClass('active');
+        }
+    });
 
-  $('#langBtn').click(function(){
-    const url = $('#lang').val();
-    // console.log(url);
-    window.open(url);
-  })
+    $('.site-item > a').click(function(e){
+        e.preventDefault();
+        $('.sub-list-wrap').stop().slideUp();
+        $(this).siblings().stop().slideToggle();
+
+        if($(this).find('.ic-arrow').hasClass('active')){
+            $(this).find('.ic-arrow').removeClass('active');
+        }else{
+            $('.ic-arrow').removeClass('active');
+            $(this).find('.ic-arrow').addClass('active');
+        }
+
+        if($(this).hasClass('active')){
+            $(this).removeClass('active');
+        }else{
+            $('.site-item > a').removeClass('active');
+            $(this).addClass('active');
+        }
+
+        $('.sc-site .site-list .sub-item:first-child').keydown(function(e){
+            key = e.keyCode;
+            //console.log(key);
+            if(key === 9 && e.shiftKey){
+                $('.sub-list-wrap').stop().slideUp();
+                $(this).parents().siblings().find('.ic-arrow').removeClass('active');
+                $(this).parents().siblings().removeClass('active');
+            }
+        });
+        $('.sc-site .site-list .sub-item:last-child').keydown(function(e){
+            key = e.keyCode;
+            if(key === 9 && !e.shiftKey){
+                $('.sub-list-wrap').stop().slideUp();
+                $(this).parents().siblings().find('.ic-arrow').removeClass('active');
+                $(this).parents().siblings().removeClass('active');
+            }
+        });
+    });
 
     const slide1 = new Swiper(".slide1 .swiper", {
         loop:true,
@@ -31,8 +72,8 @@ $(function(){
           nextEl: ".next",
           prevEl: ".prev",
         },
-      });
-    const slide2 = new Swiper(".slide2 .swiper", {
+    });
+   const slide2 = new Swiper(".slide2 .swiper", {
         loop:true,
         autoplay: {
           delay: 2000,
@@ -46,10 +87,9 @@ $(function(){
           nextEl: ".next",
           prevEl: ".prev",
         },
-      });
-      slide2.autoplay.stop();
-
-      const slide3 = new Swiper(".slide3 .swiper", {
+    });
+    slide2.autoplay.stop(); // 처음엔 slide2 재생 멈춤 상태로 선언
+    const slide3 = new Swiper(".slide3 .swiper", {
         slidesPerView: 3,
         spaceBetween: 43,
         loop:true,
@@ -65,178 +105,60 @@ $(function(){
           nextEl: ".next",
           prevEl: ".prev",
         },
-      });
-    /**
-     * 접근성 & UX 개선 (키보드 사용할때만 포커스 나오게)
-     *
-     * @version 1.0.0
-     * @since 2022-01-16
-     * @author 본인이름 (Nico)
-     */
-    // 나중에 h3 class
-      $('.sc-visual h3').click(function(e){
+    });
+
+    $('.slide .sc-title-tab').click(function(e){
         e.preventDefault();
-        $(this).parent().addClass('active').siblings().removeClass('active')
+        $('.sc-title-tab').removeClass('active');
+        $(this).parent().addClass('active').siblings().removeClass('active');
+        // 해당하는 tab의 부모인 slide가 display block 형제 요소 display none
         
-        // 조건1 주요뉴스인지 시민참여인지 알아야함
-        // 만약에 선택한 h3의 부모가 slide1이라는 클래스를 가지고 있다면(주요뉴스클릭)
-        // 그렇지 않다면 (시민참여)
         if($(this).parent().hasClass('slide1')){
-          slide2.autoplay.stop(); //서로 반대되는 것 정지
-          // slide1.autoplay.start(); // 주요뉴스 실행 내꺼 클릭시 실행
-          if ($('.slide1 .play').hasClass('active')) {
+            slide2.autoplay.stop();
+            if ($('.slide1 .play').hasClass('active')) {
+                slide1.autoplay.stop();
+            } else {
+                slide1.autoplay.start();
+            }            
+        }else{
             slide1.autoplay.stop();
-          } else {
+            if ($('.slide2 .play').hasClass('active')) {
+                slide2.autoplay.stop();
+            } else {
+                slide2.autoplay.start();
+            }
+        }// class이벤트엔 .찍지 않기
+    });
+
+    $('.slide1 .auto-play').click(function(e){
+        e.preventDefault();
+        if($(this).find('.play').hasClass('active')){
             slide1.autoplay.start();
-          }
-        }else{
-          slide1.autoplay.stop(); //서로 반대되는 것 정지
-          // slide2.autoplay.start();// 시민참여실행 내꺼 클릭시 실행
-          if ($('.slide2 .play').hasClass('active')) {
-            slide2.autoplay.stop();
-          } else {
-            slide2.autoplay.start();
-          }
-        }
-      })
-      $('.slide1 .auto-play').click(function(e){
-        e.preventDefault();
-        if($(this).find('.play').hasClass('active')){
-          slide1.autoplay.start();
-          $(this).find('.pause').addClass('active').siblings().removeClass('active');
-
+            $(this).find('.play').removeClass('active').siblings().addClass('active');
         }else{
             slide1.autoplay.stop();
-            $(this).find('.play').addClass('active').siblings().removeClass('active');
+            $(this).find('.pause').removeClass('active').siblings().addClass('active');
         }
-        // slide1.autoplay.stop();
-        // $(this).find('.play').addClass('active').siblings().removeClass('active');
-      })
-      $('.slide2 .auto-play').click(function(e){
+    });
+    $('.slide2 .auto-play').click(function(e){
         e.preventDefault();
         if($(this).find('.play').hasClass('active')){
-          slide2.autoplay.start();
-          $(this).find('.pause').addClass('active').siblings().removeClass('active');
-
+            slide2.autoplay.start();
+            $(this).find('.play').removeClass('active').siblings().addClass('active');
         }else{
             slide2.autoplay.stop();
-            $(this).find('.play').addClass('active').siblings().removeClass('active');
+            $(this).find('.pause').removeClass('active').siblings().addClass('active');
         }
-      })
-
-  //sc-site
-      $('.site-item > a').click(function(e){
+    });
+    $('.slide3 .auto-play').click(function(e){
         e.preventDefault();
-        $('.sub-list-wrap').stop().slideUp(); // 모든 sub-list닫아두고
-        $(this).siblings('.sub-list-wrap').stop().slideToggle(200); // 해당하는 sub-list만 토글처리
-
-        if ($(this).find('.ic-arrow').hasClass('active')) {
-          $('.ic-arrow').removeClass('active')
-        } else {
-          $('.ic-arrow').removeClass('active') // 다 제거되고 
-          $(this).find('.ic-arrow').addClass('active') // 나만
+        if($(this).find('.play').hasClass('active')){
+            slide3.autoplay.start();
+            $(this).find('.play').removeClass('active').siblings().addClass('active');
+        }else{
+            slide3.autoplay.stop();
+            $(this).find('.pause').removeClass('active').siblings().addClass('active');
         }
-        // !hasclass false부터
-        // $('.ic-arrow').removeClass('active');
-        // $(this).find('.ic-arrow').toggleClass('active');
+    });
 
-        // $('.site-item > a').removeClass('active');
-        // $(this).toggleClass('active');
-
-        // 해당 a 다시 눌렀을때 전부 removeClass
-      });
-      //keyup 실시간으로 바로 찾을때
-      //keydown
-      $('.sc-site .sub-list .sub-item:first-child').keydown(function(e){
-        //console.log(e.keyCode);
-        const key = e.keyCode;
-        if(key === 9 && e.shiftKey){
-          $('.sub-list-wrap').stop().slideUp();
-        }
-      })
-      $('.sc-site .sub-list .sub-item:last-child').keydown(function(e){
-        //console.log(e.keyCode);
-        const key = e.keyCode;
-        if(key === 9 && !e.shiftKey){
-          $('.sub-list-wrap').stop().slideUp();
-        }
-      })
-      
-  
-
-  // // main swiper slide
-  //   var swiper01 = new Swiper(".main-slide", {
-  //       spaceBetween: 0,
-  //       centeredSlides: true,
-  //       autoplay: {
-  //         delay: 2000,
-  //         disableOnInteraction: false,
-  //       },
-  //       pagination: {
-  //         el: ".pager1",
-  //         type: "fraction",
-  //       },
-  //       navigation: {
-  //         nextEl: ".next",
-  //         prevEl: ".prev",
-  //       },
-  //     });
-
-  //   //autoplay
-  //   $('.pause').on('click',function(event){
-  //     $(this).removeClass('active').siblings('.play').addClass('active');
-  //     swiper01.autoplay.stop();
-  //     return false;
-  //   })
-  //   $('.play').on('click',function(event){
-  //     $(this).removeClass('active').siblings('.pause').addClass('active');
-  //     swiper01.autoplay.start();
-  //     return false;
-  //   });
-
-  //   //tab
-  //   $('.btn-tab').click(function(event){
-  //     href = $(this).data('target');
-  //     $('[data-id='+href+']').addClass('active').siblings('.swiper').removeClass('active');
-  //     $(this).addClass('active').siblings().removeClass('active');
-
-  //     return false;
-  //   });
-
-
-  // //sub swiper slider
-  // var swiper02 = new Swiper(".sub-slide", {
-  //   slidesPerView: 3,
-  //   spaceBetween: 43,
-  //   loop:true,
-  //   autoplay: {
-  //     delay: 2000,
-  //     disableOnInteraction: false,
-  //   },
-  //   pagination: {
-  //     el: ".pager2",
-  //     type: "fraction",
-  //   },
-  //   navigation: {
-  //     nextEl: ".next",
-  //     prevEl: ".prev",
-  //   }
-  // }); 
-
-
-  // //sc-site
-  // $('.sub-list').css('display','none'); // 전부 display none 처리
-  // $('.site-item > a').click(function(event){
-  //   $('.sub-list').stop().slideUp(); // 모든 sub-list닫아두고
-  //   $(this).siblings('.sub-list').stop().slideToggle(200); // 해당하는 sub-list만 토글처리
-
-  //   $('.ic-arrow').removeClass('active');
-  //   $(this).find('.ic-arrow').toggleClass('active');
-
-  //   $('.site-item > a').removeClass('active');
-  //   $(this).toggleClass('active');
-
-  //   // 해당 a 다시 눌렀을때 전부 removeClass
-  //   return false;
-  // });
 })
